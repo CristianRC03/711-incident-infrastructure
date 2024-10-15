@@ -142,7 +142,7 @@ resource "azurerm_linux_virtual_machine" "IN_VM" {
       "sudo su -c 'echo \"MAIL_SERVICE=${var.MAIL_SERVICE}\" >> /home/${var.admin_username}/.env'",
       "sudo su -c 'echo \"MAIL_USER=${var.MAIL_USER}\" >> /home/${var.admin_username}/.env'",
       "sudo su -c 'echo \"MONGO_INITDB_ROOT_USERNAME=${var.MONGO_INITDB_ROOT_USERNAME}\" >> /home/${var.admin_username}/.env'",
-      "sudo su -c 'echo \"MONGO_INITDB_ROOT_PASSWORD=${vvar.PASSWORD}\" >> /home/${var.admin_username}/.env'",
+      "sudo su -c 'echo \"MONGO_INITDB_ROOT_PASSWORD=${var.MONGO_INITDB_ROOT_PASSWORD}\" >> /home/${var.admin_username}/.env'",
       "sudo su -c 'echo \"DOMAIN=${var.DOMAIN}\" >> /home/${var.admin_username}/.env'",
     ]
     connection {
