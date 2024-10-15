@@ -47,8 +47,8 @@ jobs:
             - name: Create SSH keys from secret
               run: |
                   mkdir -p ./env/dev/keys
-                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ./env/dev/keys/711incident_serve
-                  echo "${{ secrets.SSH_PUBLIC_KEY }}" > ./env/dev/keys/711incident_serve.pub
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ./env/dev/keys/711incident_server
+                  echo "${{ secrets.SSH_PUBLIC_KEY }}" > ./env/dev/keys/711incident_server.pub
                   chmod 777 ./env/dev/keys/711incident_server
                   chmod 777 ./env/dev/keys/711incident_server.pub
 
@@ -56,7 +56,7 @@ jobs:
               run: terraform -chdir=env/dev init
 
             - name: Terraform fmt
-              run: erraform -chdir=env/dev fmt
+              run: terraform -chdir=env/dev fmt
 
             - name: Terraform plan
-              run: erraform -chdir=env/dev plan
+              run: terraform -chdir=env/dev plan
