@@ -30,7 +30,7 @@ services:
  
   incident-api:
       image: enemyemy01/monkey-pox-api:latest
-      container_name: incident-api
+      container_name: monkey-pox-api
       expose:
         - "3000"
       depends_on:
